@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: oxrdflib
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/o/oxrdflib/oxrdflib-{{ version }}.tar.gz
-    sha256: 8130c9803007d0e1ebbec84063e4d3cdf6e1bd67173207d5bdfe493f10384e09
+    sha256: 0e216500eca1c22a7b4f1cc911b76986302db230fb6c54da25da4482e0c7bb5e
   - folder: src
     url: https://github.com/oxigraph/oxrdflib/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 2085584d34bd47008b6a364441f8e465d53cbf5cddf9223cbea12554a6755209
+    sha256: 08f60a100158ac0ecb1d76df6f3e5b90320a0fde93e08f6878e9b68b7ed9f975
 
 build:
   number: 0
@@ -20,11 +20,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - pyoxigraph >=0.2,<0.3
-    - python >=3.6
-    - rdflib >=4.0,<6.0
+    - python >=3.7
+    - rdflib >=6.0,<7.0
 
 test:
   source_files:
