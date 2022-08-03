@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: oxrdflib
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/o/oxrdflib/oxrdflib-{{ version }}.tar.gz
-    sha256: db859fee2c02a0e6464d2576f4bd0bf8d7997b42ffd86699fde8320b4d95bb88
+    sha256: 32737a8829584f9ecd0c6ee9f3aec9f944549b0868a17482aa3309676cc0fe23
   - folder: src
     url: https://github.com/oxigraph/oxrdflib/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: d12195a8b2f3c67820ea4a4e168a96ef124a2f4493a46b228fb649a555670a5d
+    sha256: cdc4436205544f913c8da0b78537f5bf87e873cd44252a458174f8ff653eb505
 
 build:
   number: 0
