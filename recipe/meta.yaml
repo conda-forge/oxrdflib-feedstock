@@ -22,7 +22,7 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - pyoxigraph >=0.3,<0.4
+    - pyoxigraph >=0.3.5,<0.4
     - python >=3.7
     - rdflib >=6.0,<7.0
 
