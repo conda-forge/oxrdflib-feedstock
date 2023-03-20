@@ -21,10 +21,11 @@ requirements:
   host:
     - pip
     - python >=3.7
+    - setuptools-scm
   run:
-    - pyoxigraph >=0.3,<0.4
+    - pyoxigraph >=0.3.14,<0.4
     - python >=3.7
-    - rdflib >=6.0,<7.0
+    - rdflib >=6.3,<7.0
 
 test:
   source_files:
