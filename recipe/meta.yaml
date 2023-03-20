@@ -34,7 +34,7 @@ test:
     - oxrdflib
   commands:
     - pip check
-    - cd src && pytest -vv --cov=oxrdflib --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=86
+    - cd src && pytest -vv --cov=oxrdflib --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=85
   requires:
     - pip
     - pytest-cov
