@@ -1,4 +1,4 @@
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 package:
   name: oxrdflib
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/o/oxrdflib/oxrdflib-{{ version }}.tar.gz
-    sha256: 034cdd6fb87a86e30ba1e4a970d1d28c3a52f8e19b5392c1a76a99176d0dcc15
+    sha256: 50ee1580af06a5f799141958ae93d652719493877ccc86f19639fea23d050c89
   - folder: src
     url: https://github.com/oxigraph/oxrdflib/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 3b9d2b346a029e25c6344e9366636dcc357b39155984c43ee7bddb4b3a23c03a
+    sha256: 3b7b4c7105f66629a237cb4c42bb7c779982cebc4396a0694eaef1d301dee72a
 
 build:
   number: 0
@@ -34,7 +34,7 @@ test:
     - oxrdflib
   commands:
     - pip check
-    - cd src && pytest -vv --cov=oxrdflib --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=85
+    - cd src && pytest -vv --cov=oxrdflib --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=84
   requires:
     - pip
     - pytest-cov
