@@ -9,8 +9,6 @@ Package license: BSD-3-Clause
 
 Summary: rdflib stores based on pyoxigraph
 
-Development: https://github.com/oxigraph/oxrdflib
-
 Current build status
 ====================
 
