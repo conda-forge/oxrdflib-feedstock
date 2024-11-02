@@ -17,6 +17,7 @@ requirements:
   host:
     - pip
     - python >=3.8
+    - setuptools
     - setuptools-scm
   run:
     - pyoxigraph >=0.4.2,<0.5
