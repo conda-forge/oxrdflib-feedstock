@@ -9,7 +9,7 @@ source:
   sha256: 37d4c025d4e39c5e5472527c393998bfd10e5ac185a30e080b5b510f6dd7da86
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: 
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
   run:
     - pyoxigraph >=0.4.2,<0.5
-    - python >=3.8
+    - python >={{ python_min }}
     - rdflib >=6.3,<8.0
 
 test:
@@ -39,6 +39,7 @@ test:
     - pip
     - pytest
     - requests
+    - python {{ python_min }}
 
 about:
   home: https://github.com/oxigraph/oxrdflib
