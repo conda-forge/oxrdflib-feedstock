@@ -9,13 +9,18 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/o/oxrdflib/oxrdflib-${{ version }}.tar.gz
-  sha256: f83148e2c6d443f7718c6e8936c6b89e36ebb4f1002da69e8f0656e8fb5a0df2
+  - url: https://pypi.org/packages/source/o/oxrdflib/oxrdflib-${{ version }}.tar.gz
+    sha256: f83148e2c6d443f7718c6e8936c6b89e36ebb4f1002da69e8f0656e8fb5a0df2
+    target_directory: dist
+  - url: https://github.com/oxigraph/oxrdflib/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 616a46f1000c8d6b84bb9b2e5a1c62bc8ec4b200217b67bc1cdced5cd749e99a
+    target_directory: src
 
 build:
   number: 0
   noarch: python
   script:
+    - cd dist
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
@@ -36,7 +41,7 @@ tests:
         - 3.13.*
   - files:
       source:
-        - tests/
+        - src/tests/
     requirements:
       run:
         - coverage
@@ -44,13 +49,14 @@ tests:
         - requests
         - python ${{ python_min }}.*
     script:
+      - cd src
       - coverage run --source=oxrdflib --branch -m pytest -vv --tb=long --color=yes
       - coverage report --show-missing --skip-covered  --fail-under=87
 
 about:
   summary: rdflib stores based on pyoxigraph
   license: BSD-3-Clause
-  license_file: LICENSE.md
+  license_file: src/LICENSE.md
   homepage: https://github.com/oxigraph/oxrdflib
 
 extra:
