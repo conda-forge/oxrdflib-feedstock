@@ -30,20 +30,20 @@ requirements:
 
 tests:
   - python:
-      imports:
-        - oxrdflib
+      imports: oxrdflib
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
   - files:
       source:
         - tests/
     requirements:
       run:
         - coverage
-        - pip
         - pytest
         - requests
         - python ${{ python_min }}.*
     script:
-      - pip check
       - coverage run --source=oxrdflib --branch -m pytest -vv --tb=long --color=yes
       - coverage report --show-missing --skip-covered  --fail-under=87
 
